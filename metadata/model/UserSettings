@@ -1,0 +1,63 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserSettings",
+        "designer|userAlias": "UserSettings"
+    },
+    "designerId": "100b792a-7e9f-41a5-a2f7-2a7a49ce4e0b",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "d689c5d3-6bc5-4b3c-b106-3ef95ccdd5a5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "designerId": "c5b6db1a-b8d2-4b13-b8dd-cf8d3fdef673"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "value"
+            },
+            "designerId": "cb8c082b-41e2-4cb8-a82c-0c53ae5b5cd8"
+        },
+        {
+            "type": "Ext.data.proxy.LocalStorage",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "proxyContacts"
+            },
+            "designerId": "f9d659a2-e7a2-4729-bba6-31e77e4956b4"
+        }
+    ]
+}

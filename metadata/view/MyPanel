@@ -1,0 +1,231 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyPanel",
+        "designer|initialView": true,
+        "layout": "fit"
+    },
+    "designerId": "503f12ef-033b-4187-b515-b59818bd3ba5",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "id": "pnlForm"
+            },
+            "designerId": "ffc24be5-ede0-40d7-b523-a2234b6cc3d4",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "txtName",
+                        "label": "name",
+                        "name": "name"
+                    },
+                    "designerId": "358710b0-2fcd-411e-9fb3-82bca778f509"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "btnSave",
+                        "itemId": "mybutton",
+                        "text": "Save"
+                    },
+                    "designerId": "8143121f-a814-48e5-9d88-63332ebdce67",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnSaveRelease",
+                                "implHandler": [
+                                    "var values = Ext.getCmp(\"pnlForm\").getValues();\r",
+                                    "\r",
+                                    "var store = Ext.getStore(\"Store1\");\r",
+                                    "\r",
+                                    "\r",
+                                    "var item = Ext.create('model.UserSettings', {\r",
+                                    "    id: 1,\r",
+                                    "    name: 'user name',\r",
+                                    "    value: values.name\r",
+                                    "});\r",
+                                    "\r",
+                                    "item={name:'username',value:values.name}\r",
+                                    "\r",
+                                    "console.log(item.data);\r",
+                                    "\r",
+                                    "store.add(item);\r",
+                                    "\r",
+                                    "//store.add({name:'aliiiiiii'});\r",
+                                    "store.sync();"
+                                ],
+                                "name": "release"
+                            },
+                            "designerId": "4c59bb7c-2d77-4a9f-afba-c2c87c951a3a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 277,
+                        "html": "empty",
+                        "id": "lblName"
+                    },
+                    "designerId": "8ccebb43-9bdb-4a14-a737-7de92641ada3"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "mybutton1",
+                        "text": "Show values from store"
+                    },
+                    "designerId": "df8bcda9-c042-4ade-af5d-76a8540c4e72",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton1Release",
+                                "implHandler": [
+                                    "var store = Ext.getStore(\"Store1\");\r",
+                                    "\r",
+                                    "//clear lbl\r",
+                                    "Ext.getCmp(\"lblName\").setHtml(\"\");\r",
+                                    "\r",
+                                    "for(var c=0;c < store.getCount();c++)\r",
+                                    "{\r",
+                                    "    var record = store.getAt(c);\r",
+                                    "    var value=record.data.value;\r",
+                                    "\tvar temp=Ext.getCmp(\"lblName\").getHtml();\r",
+                                    "    Ext.getCmp(\"lblName\").setHtml(value + \"<br/>\" + temp);\r",
+                                    "\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    ""
+                                ],
+                                "name": "release"
+                            },
+                            "designerId": "7236c298-3f28-47a1-bec7-fd906ce5b227"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "mybutton2",
+                        "text": "load store from localstorage"
+                    },
+                    "designerId": "8da932c8-2ecf-45f9-a6ca-125e53303e10",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton2Release",
+                                "implHandler": [
+                                    "var store = Ext.getStore(\"Store1\");\r",
+                                    "\r",
+                                    "store.load({\r",
+                                    "    callback: function(records, operation, success) {\r",
+                                    "        // the operation object contains all of the details of the load operation\r",
+                                    "        console.log(records);\r",
+                                    "\r",
+                                    "        for(f in records)\r",
+                                    "        {\r",
+                                    "            console.log(records[f].data);\r",
+                                    "        }\r",
+                                    "\r",
+                                    "    },\r",
+                                    "    scope: this\r",
+                                    "});"
+                                ],
+                                "name": "release"
+                            },
+                            "designerId": "c4f609a3-7d64-477c-a752-9d6f57dc76c3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "mybutton3",
+                        "text": "Clear Localstorage"
+                    },
+                    "designerId": "eff3aa50-3d7e-400a-ae67-94687ffa3f20",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton3Release",
+                                "implHandler": [
+                                    "localStorage.clear();"
+                                ],
+                                "name": "release"
+                            },
+                            "designerId": "db2f010d-be3d-4f8f-8940-f02c255b1e9e"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

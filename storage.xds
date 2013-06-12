@@ -1,0 +1,62 @@
+{
+    "name": "storage",
+    "settings": {
+        "urlPrefix": "http://localhost/2273_winning_submissions/storage/",
+        "exportPath": ""
+    },
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 991,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "touch22",
+    "topInstanceFileMap": {
+        "08f09706-0a8a-4558-b4a0-8ace0042bd1c": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "16b3b70e-3d2a-41d3-af84-650328ae14fb": {
+            "paths": [
+                "metadata/store/MyStore",
+                "app/store/override/MyStore.js",
+                "app/store/MyStore.js"
+            ],
+            "className": "MyStore"
+        },
+        "100b792a-7e9f-41a5-a2f7-2a7a49ce4e0b": {
+            "paths": [
+                "metadata/model/UserSettings",
+                "app/model/override/UserSettings.js",
+                "app/model/UserSettings.js"
+            ],
+            "className": "UserSettings"
+        },
+        "503f12ef-033b-4187-b515-b59818bd3ba5": {
+            "paths": [
+                "metadata/view/MyPanel",
+                "app/view/override/MyPanel.js",
+                "app/view/MyPanel.js"
+            ],
+            "className": "MyPanel"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "503f12ef-033b-4187-b515-b59818bd3ba5"
+        ],
+        "store": [
+            "16b3b70e-3d2a-41d3-af84-650328ae14fb"
+        ],
+        "controller": [],
+        "model": [
+            "100b792a-7e9f-41a5-a2f7-2a7a49ce4e0b"
+        ],
+        "resource": [
+            "08f09706-0a8a-4558-b4a0-8ace0042bd1c"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
